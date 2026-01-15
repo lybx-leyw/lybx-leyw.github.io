@@ -8,7 +8,7 @@
  */
 
 // ============================================
-// 1. 全局字体与基础样式调整
+// 全局字体与基础样式调整
 // ============================================
 :root {
   --text-color: #333;
@@ -28,107 +28,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-// ============================================
-// 2. 顶部导航栏优化
-// ============================================
-.masthead {
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--border-color);
-  background-color: white;
-  
-  .site-title {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: var(--text-color);
-    
-    &:hover {
-      color: var(--primary-color);
-    }
-  }
-  
-  .greedy-nav {
-    a {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text-color-light);
-      padding: 0.4rem 0.8rem;
-      border-radius: 4px;
-      transition: all var(--transition-speed) ease;
-      
-      &:hover {
-        color: var(--primary-color);
-        background-color: rgba(37, 99, 235, 0.05);
-      }
-      
-      &.active {
-        color: var(--primary-color);
-        background-color: rgba(37, 99, 235, 0.1);
-      }
-    }
-  }
-}
-
-// ============================================
-// 3. 首页splash区域美化
-// ============================================
-.page__hero {
-  &--overlay {
-    padding: 4rem 0 3rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    
-    .page__title {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: white;
-      margin-bottom: 0.8rem;
-      letter-spacing: -0.02em;
-    }
-    
-    .page__excerpt {
-      font-size: 1.1rem;
-      color: rgba(255, 255, 255, 0.9);
-      max-width: 700px;
-      margin: 0 auto 2rem;
-      line-height: 1.6;
-    }
-    
-    .btn {
-      font-size: 0.95rem;
-      font-weight: 500;
-      padding: 0.7rem 1.5rem;
-      border-radius: 6px;
-      border: none;
-      transition: all var(--transition-speed) ease;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      
-      &--primary {
-        background-color: white;
-        color: var(--primary-color);
-        
-        &:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-      }
-      
-      &--light {
-        background-color: rgba(255, 255, 255, 0.1);
-        color: white;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        
-        &:hover {
-          background-color: rgba(255, 255, 255, 0.2);
-          transform: translateY(-2px);
-        }
-      }
-    }
-  }
-}
-
-// ============================================
-// 4. 内容区域通用样式
-// ============================================
 .page__content {
   padding: 2.5rem 0;
   
@@ -158,9 +57,6 @@ body {
   }
 }
 
-// ============================================
-// 5. 项目卡片样式
-// ============================================
 .feature__wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -217,9 +113,6 @@ body {
   }
 }
 
-// ============================================
-// 6. 博客文章样式
-// ============================================
 .archive {
   .archive__item {
     padding: 1.2rem 0;
@@ -262,7 +155,7 @@ body {
 }
 
 // ============================================
-// 7. 按钮样式统一
+// 按钮样式统一
 // ============================================
 .btn {
   display: inline-block;
@@ -333,7 +226,7 @@ body {
 }
 
 // ============================================
-// 8. 页脚样式
+// 页脚样式
 // ============================================
 .page__footer {
   padding: 2rem 0;
@@ -346,64 +239,6 @@ body {
     color: var(--text-color-light);
   }
 }
-
-// ============================================
-// 9. 响应式调整
-// ============================================
-@media (max-width: 768px) {
-  body {
-    font-size: 15px;
-  }
-  
-  .page__hero--overlay {
-    padding: 2.5rem 0 2rem;
-    
-    .page__title {
-      font-size: 1.8rem;
-    }
-    
-    .page__excerpt {
-      font-size: 1rem;
-    }
-  }
-  
-  .masthead {
-    padding: 0.8rem 0;
-  }
-  
-  .page__content {
-    padding: 1.5rem 0;
-  }
-  
-  .feature__wrapper {
-    gap: 1rem;
-  }
-}
-
-// ============================================
-// 10. 工具类（Utilities）
-// ============================================
-.text-center {
-  text-align: center;
-}
-
-.mt-1 { margin-top: 0.5rem; }
-.mt-2 { margin-top: 1rem; }
-.mt-3 { margin-top: 1.5rem; }
-.mt-4 { margin-top: 2rem; }
-
-.mb-1 { margin-bottom: 0.5rem; }
-.mb-2 { margin-bottom: 1rem; }
-.mb-3 { margin-bottom: 1.5rem; }
-.mb-4 { margin-bottom: 2rem; }
-
-.p-2 { padding: 1rem; }
-.p-3 { padding: 1.5rem; }
-.p-4 { padding: 2rem; }
-
-.rounded { border-radius: 6px; }
-.shadow-sm { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); }
-.shadow-md { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); }
 
 // ============================================
 // 11. 代码高亮样式（可选，如果你有代码块）
@@ -433,86 +268,5 @@ body {
   
   @media (max-width: 768px) {
     padding: 0 1rem;
-  }
-
-}
-
-// ============================================
-// 无障碍访问链接 - 隐藏但可用
-// ============================================
-
-.skip-link {
-  background-color: #f1f1f1;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  color: #333;
-  display: block;
-  font-size: 0.875rem;
-  font-weight: 700;
-  left: 50%;
-  padding: 0.5rem 1rem;
-  position: absolute;
-  text-decoration: none;
-  transform: translateY(-100%);
-  transition: transform 0.3s;
-  z-index: 9999;
-  
-  &:focus {
-    transform: translateY(0);
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
-  }
-  
-  // 隐藏但屏幕阅读器可读
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
-}
-
-// 如果主题有特定的类名
-.screen-reader-text,
-.visually-hidden {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
-}
-
-.skip-link:not(:focus) {
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  width: 1px;
-}
-a[href="#site-nav"],
-a[href="#main"],
-a[href="#footer"] {
-  position: absolute !important;
-  top: -9999px !important;
-  left: -9999px !important;
-  
-  &:focus {
-    top: 1rem !important;
-    left: 1rem !important;
-    z-index: 10000 !important;
-    background: white !important;
-    padding: 1rem !important;
-    border: 2px solid var(--primary-color) !important;
-    border-radius: 4px !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
   }
 }
