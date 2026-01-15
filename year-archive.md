@@ -22,11 +22,6 @@ permalink: /year-archive/
             {{ post.date | date: "%Y年%m月%d日" }}
           </time>
         </header>
-        {% if post.excerpt %}
-          <div class="entry-excerpt">
-            {{ post.excerpt | markdownify }}
-          </div>
-        {% endif %}
       </article>
     {% endfor %}
   </div>
