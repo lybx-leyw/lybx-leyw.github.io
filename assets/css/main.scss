@@ -1,0 +1,437 @@
+---
+# 必要的Jekyll front matter
+---
+
+/* 
+ * 刘钦杰的个人网站 - 自定义样式
+ * 设计原则：简约、专业、聚焦内容
+ */
+
+// ============================================
+// 1. 全局字体与基础样式调整
+// ============================================
+:root {
+  --text-color: #333;
+  --text-color-light: #666;
+  --border-color: #eaeaea;
+  --background-light: #fafafa;
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --transition-speed: 0.2s;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// ============================================
+// 2. 顶部导航栏优化
+// ============================================
+.masthead {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+  background-color: white;
+  
+  .site-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-color);
+    
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+  
+  .greedy-nav {
+    a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-color-light);
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      transition: all var(--transition-speed) ease;
+      
+      &:hover {
+        color: var(--primary-color);
+        background-color: rgba(37, 99, 235, 0.05);
+      }
+      
+      &.active {
+        color: var(--primary-color);
+        background-color: rgba(37, 99, 235, 0.1);
+      }
+    }
+  }
+}
+
+// ============================================
+// 3. 首页splash区域美化
+// ============================================
+.page__hero {
+  &--overlay {
+    padding: 4rem 0 3rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    
+    .page__title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.02em;
+    }
+    
+    .page__excerpt {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+    
+    .btn {
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 0.7rem 1.5rem;
+      border-radius: 6px;
+      border: none;
+      transition: all var(--transition-speed) ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      
+      &--primary {
+        background-color: white;
+        color: var(--primary-color);
+        
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+      }
+      
+      &--light {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.2);
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+}
+
+// ============================================
+// 4. 内容区域通用样式
+// ============================================
+.page__content {
+  padding: 2.5rem 0;
+  
+  h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+    
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  
+  h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 1.5rem 0 0.8rem;
+  }
+  
+  p {
+    margin-bottom: 1.2rem;
+    color: var(--text-color);
+  }
+}
+
+// ============================================
+// 5. 项目卡片样式
+// ============================================
+.feature__wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0 3rem;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.feature__item {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all var(--transition-speed) ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  
+  &:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  }
+  
+  .archive__item-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    
+    a {
+      color: var(--text-color);
+      text-decoration: none;
+      
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+  
+  .archive__item-excerpt {
+    font-size: 0.95rem;
+    color: var(--text-color-light);
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+    flex-grow: 1;
+  }
+  
+  .btn {
+    align-self: flex-start;
+    margin-top: auto;
+  }
+}
+
+// ============================================
+// 6. 博客文章样式
+// ============================================
+.archive {
+  .archive__item {
+    padding: 1.2rem 0;
+    border-bottom: 1px solid var(--border-color);
+    
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    .archive__item-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      
+      a {
+        color: var(--text-color);
+        
+        &:hover {
+          color: var(--primary-color);
+        }
+      }
+    }
+    
+    .archive__item-excerpt {
+      font-size: 0.95rem;
+      color: var(--text-color-light);
+      line-height: 1.6;
+    }
+    
+    .archive__item-meta {
+      font-size: 0.85rem;
+      color: #888;
+      margin-top: 0.5rem;
+      
+      i {
+        margin-right: 0.3rem;
+      }
+    }
+  }
+}
+
+// ============================================
+// 7. 按钮样式统一
+// ============================================
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  border: 1px solid transparent;
+  
+  &--primary {
+    background-color: var(--primary-color);
+    color: white;
+    
+    &:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    }
+  }
+  
+  &--light {
+    background-color: white;
+    color: var(--text-color);
+    border-color: var(--border-color);
+    
+    &:hover {
+      background-color: var(--background-light);
+      border-color: #ccc;
+    }
+  }
+  
+  &--info {
+    background-color: #0ea5e9;
+    color: white;
+    
+    &:hover {
+      background-color: #0284c7;
+    }
+  }
+  
+  &--success {
+    background-color: #10b981;
+    color: white;
+    
+    &:hover {
+      background-color: #059669;
+    }
+  }
+  
+  &--warning {
+    background-color: #f59e0b;
+    color: white;
+    
+    &:hover {
+      background-color: #d97706;
+    }
+  }
+  
+  &--small {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+// ============================================
+// 8. 页脚样式
+// ============================================
+.page__footer {
+  padding: 2rem 0;
+  margin-top: 3rem;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--background-light);
+  
+  .footer-copyright {
+    font-size: 0.9rem;
+    color: var(--text-color-light);
+  }
+}
+
+// ============================================
+// 9. 响应式调整
+// ============================================
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+  
+  .page__hero--overlay {
+    padding: 2.5rem 0 2rem;
+    
+    .page__title {
+      font-size: 1.8rem;
+    }
+    
+    .page__excerpt {
+      font-size: 1rem;
+    }
+  }
+  
+  .masthead {
+    padding: 0.8rem 0;
+  }
+  
+  .page__content {
+    padding: 1.5rem 0;
+  }
+  
+  .feature__wrapper {
+    gap: 1rem;
+  }
+}
+
+// ============================================
+// 10. 工具类（Utilities）
+// ============================================
+.text-center {
+  text-align: center;
+}
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+
+.p-2 { padding: 1rem; }
+.p-3 { padding: 1.5rem; }
+.p-4 { padding: 2rem; }
+
+.rounded { border-radius: 6px; }
+.shadow-sm { box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); }
+.shadow-md { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); }
+
+// ============================================
+// 11. 代码高亮样式（可选，如果你有代码块）
+// ============================================
+.highlight {
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  overflow: hidden;
+  
+  pre {
+    margin: 0;
+    padding: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    background-color: #f8f9fa;
+    border: 1px solid var(--border-color);
+  }
+}
+
+// ============================================
+// 12. 自定义间距和布局
+// ============================================
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
+}
