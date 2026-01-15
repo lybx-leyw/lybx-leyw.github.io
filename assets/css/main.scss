@@ -1,263 +1,311 @@
 ---
-# 必要的Jekyll front matter
+
 ---
 
-// ============================================
-// 全局字体与基础样式调整
-// ============================================
-:root {
-  --text-color: #333;
-  --text-color-light: #666;
-  --border-color: #eaeaea;
-  --background-light: #fafafa;
-  --primary-color: #2563eb;
-  --primary-hover: #1d4ed8;
-  --transition-speed: 0.2s;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--text-color);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.page__content {
-  padding: 2.5rem 0;
+// 使用body类选择器，只针对非首页页面
+body:not(.layout--splash) {
+  font-size: 15px;  // 基础字体略小于首页
+  line-height: 1.65; // 增加行高，提升可读性
+  
+  // 标题层级调整
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
   
   h2 {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: var(--text-color);
-    margin: 2rem 0 1rem;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--border-color);
-    
-    &:first-child {
-      margin-top: 0;
-    }
+    border-bottom: 1px solid var(--border-color);
   }
   
   h3 {
     font-size: 1.3rem;
-    font-weight: 600;
-    color: var(--text-color);
-    margin: 1.5rem 0 0.8rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.6rem;
   }
   
+  h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  
+  // 正文段落
   p {
     margin-bottom: 1.2rem;
-    color: var(--text-color);
+    line-height: 1.65;
+  }
+  
+  // 列表项
+  li {
+    margin-bottom: 0.4rem;
+    line-height: 1.6;
+  }
+  
+  // 代码块
+  pre, code {
+    font-size: 0.9em;
+  }
+  
+  // 引用块
+  blockquote {
+    font-size: 1em;
+    line-height: 1.6;
   }
 }
 
-.feature__wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem 0 3rem;
-  
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-}
-
-.feature__item {
-  background: white;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 1.5rem;
-  transition: all var(--transition-speed) ease;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  
-  &:hover {
-    transform: translateY(-4px);
-    border-color: var(--primary-color);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  }
-  
-  .archive__item-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 0.8rem;
+// ============================================
+// 2. 针对"关于我"页面优化
+// ============================================
+.page--about {
+  .page__content {
+    font-size: 15.5px;
     
-    a {
-      color: var(--text-color);
-      text-decoration: none;
-      
-      &:hover {
-        color: var(--primary-color);
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    h2 {
+      margin-top: 2.5rem;
+      color: var(--primary-color);
+    }
+    
+    // 技能列表
+    ul {
+      line-height: 1.8;
+      li {
+        margin-bottom: 0.5rem;
       }
     }
   }
-  
-  .archive__item-excerpt {
-    font-size: 0.95rem;
-    color: var(--text-color-light);
-    line-height: 1.6;
-    margin-bottom: 1.2rem;
-    flex-grow: 1;
-  }
-  
-  .btn {
-    align-self: flex-start;
-    margin-top: auto;
+}
+
+// ============================================
+// 3. 针对项目页面优化
+// ============================================
+.page--portfolio {
+  .page__content {
+    font-size: 15px;
+    
+    h1 {
+      font-size: 1.9rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    // 项目卡片内的文字
+    .feature__item {
+      .archive__item-title {
+        font-size: 1.25rem;
+      }
+      
+      .archive__item-excerpt {
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+      
+      .btn {
+        font-size: 0.9rem;
+      }
+    }
   }
 }
 
-.archive {
-  .archive__item {
-    padding: 1.2rem 0;
-    border-bottom: 1px solid var(--border-color);
+// ============================================
+// 4. 针对博客归档页面优化
+// ============================================
+.layout--archive {
+  .archive {
+    font-size: 15px;
     
-    &:last-child {
-      border-bottom: none;
+    .archive__subtitle {
+      font-size: 1.4rem;
+      color: var(--text-color-light);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
     }
     
     .archive__item-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      
-      a {
-        color: var(--text-color);
-        
-        &:hover {
-          color: var(--primary-color);
-        }
-      }
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
     }
     
     .archive__item-excerpt {
       font-size: 0.95rem;
-      color: var(--text-color-light);
       line-height: 1.6;
     }
     
-    .archive__item-meta {
+    .archive__item-date {
       font-size: 0.85rem;
       color: #888;
-      margin-top: 0.5rem;
+    }
+  }
+}
+
+// ============================================
+// 5. 针对单篇博客文章优化
+// ============================================
+.layout--single {
+  .page__content {
+    font-size: 15.5px;
+    line-height: 1.7;
+    
+    // 标题
+    h1 {
+      font-size: 1.9rem;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    
+    .page__meta {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+    
+    // 正文优化
+    h2 {
+      margin-top: 2.2rem;
+      font-size: 1.5rem;
+      line-height: 1.4;
+    }
+    
+    h3 {
+      margin-top: 1.8rem;
+      font-size: 1.3rem;
+    }
+    
+    p {
+      margin-bottom: 1.3rem;
+      line-height: 1.7;
+    }
+    
+    // 列表
+    ul, ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.2em;
       
-      i {
-        margin-right: 0.3rem;
+      li {
+        margin-bottom: 0.5rem;
+        line-height: 1.6;
       }
     }
+    
+    // 代码块
+    pre, code {
+      font-size: 0.92em;
+    }
+    
+    // 引用
+    blockquote {
+      font-size: 1.05em;
+      line-height: 1.6;
+      margin: 1.5rem 0;
+      padding: 0.8rem 1rem;
+      background-color: #f8f9fa;
+      border-left: 3px solid var(--primary-color);
+      
+      p {
+        margin-bottom: 0;
+      }
+    }
+    
+    // 图片说明
+    figcaption {
+      font-size: 0.9rem;
+      color: #666;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+    
+    // 表格
+    table {
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
   }
 }
 
 // ============================================
-// 按钮样式统一
+// 6. 移动端优化
 // ============================================
-.btn {
-  display: inline-block;
-  padding: 0.6rem 1.2rem;
-  font-size: 0.9rem;
-  font-weight: 500;
+@media (max-width: 768px) {
+  // 非首页页面在移动端的字体调整
+  body:not(.layout--splash) {
+    font-size: 14.5px;
+    
+    h1 {
+      font-size: 1.6rem;
+    }
+    
+    h2 {
+      font-size: 1.3rem;
+    }
+    
+    h3 {
+      font-size: 1.15rem;
+    }
+    
+    .page__content {
+      font-size: 14.5px;
+    }
+  }
+  
+  // 保持首页在移动端的原有风格
+  .layout--splash {
+    .page__title {
+      font-size: 1.8rem;
+    }
+    
+    .page__excerpt {
+      font-size: 1rem;
+    }
+  }
+}
+
+// ============================================
+// 7. 无障碍访问修复（简洁版）
+// ============================================
+.skip-link {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.skip-link:focus {
+  width: auto !important;
+  height: auto !important;
+  padding: 0.5rem 1rem !important;
+  margin: 0.5rem !important;
+  clip: auto !important;
+  top: 0.5rem !important;
+  left: 0.5rem !important;
+}
+
+// ============================================
+// 8. 通用工具类（可选）
+// ============================================
+.text-small {
+  font-size: 0.9em;
+}
+
+.text-large {
+  font-size: 1.1em;
+}
+
+.line-tight {
   line-height: 1.4;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all var(--transition-speed) ease;
-  border: 1px solid transparent;
-  
-  &--primary {
-    background-color: var(--primary-color);
-    color: white;
-    
-    &:hover {
-      background-color: var(--primary-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-    }
-  }
-  
-  &--light {
-    background-color: white;
-    color: var(--text-color);
-    border-color: var(--border-color);
-    
-    &:hover {
-      background-color: var(--background-light);
-      border-color: #ccc;
-    }
-  }
-  
-  &--info {
-    background-color: #0ea5e9;
-    color: white;
-    
-    &:hover {
-      background-color: #0284c7;
-    }
-  }
-  
-  &--success {
-    background-color: #10b981;
-    color: white;
-    
-    &:hover {
-      background-color: #059669;
-    }
-  }
-  
-  &--warning {
-    background-color: #f59e0b;
-    color: white;
-    
-    &:hover {
-      background-color: #d97706;
-    }
-  }
-  
-  &--small {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.85rem;
-  }
 }
 
-// ============================================
-// 页脚样式
-// ============================================
-.page__footer {
-  padding: 2rem 0;
-  margin-top: 3rem;
-  border-top: 1px solid var(--border-color);
-  background-color: var(--background-light);
-  
-  .footer-copyright {
-    font-size: 0.9rem;
-    color: var(--text-color-light);
-  }
+.line-loose {
+  line-height: 1.8;
 }
-
-.highlight {
-  border-radius: 6px;
-  margin: 1.5rem 0;
-  overflow: hidden;
-  
-  pre {
-    margin: 0;
-    padding: 1rem;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    background-color: #f8f9fa;
-    border: 1px solid var(--border-color);
-  }
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-  
-  @media (max-width: 768px) {
-    padding: 0 1rem;
-  }
-}
-
