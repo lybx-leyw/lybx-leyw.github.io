@@ -22,18 +22,6 @@ header:
     <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
       <h3 class="archive__item-title" itemprop="headline">
         <a href="{{ post.url }}" rel="permalink">{{ post.title }}</a>
-      </h3>
-      <p class="archive__item-excerpt" itemprop="description">
-        {{ post.excerpt | markdownify | strip_html | truncate: 200 }}
-      </p>
-      <p class="page__meta">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i> 
-        {{ post.date | date: "%Y年%m月%d日" }}
-        &nbsp;&nbsp;
-        <a href="{{ post.url }}" class="btn btn--light btn--small">阅读全文</a>
-        &nbsp;&nbsp;
-        <a href="/year-archive/" class="btn btn--info btn--small">所有文章</a>
-      </p>
     </article>
   </div>
   {% endfor %}
@@ -101,3 +89,4 @@ header:
     <a href="/about/" class="btn btn--warning">关于我</a>
   </p>
 </div>
+
