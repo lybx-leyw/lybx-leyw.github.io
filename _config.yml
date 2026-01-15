@@ -19,7 +19,7 @@ plugins:
   - jekyll-sitemap
 
 # 主题设置
-minimal_mistakes_skin: "default" # 皮肤：default, air, dark, mint 等
+minimal_mistakes_skin: "air" # 皮肤：default, air, dark, mint 等
 search: true # 启用搜索
 
 # 导航菜单
