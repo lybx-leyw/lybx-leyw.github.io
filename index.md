@@ -23,7 +23,7 @@ header:
       <h3 class="archive__item-title" itemprop="headline">
         <a href="{{ post.url }}" rel="permalink">{{ post.title }}</a>
       </h3>
-      <>
+      ---
       <p class="page__meta">
         <i class="far fa-calendar-alt" aria-hidden="true"></i> 
         {{ post.date | date: "%Y年%m月%d日" }}
@@ -99,5 +99,6 @@ header:
     <a href="/about/" class="btn btn--warning">关于我</a>
   </p>
 </div>
+
 
 
