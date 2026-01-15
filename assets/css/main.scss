@@ -1,274 +1,21 @@
 ---
-
+# 必要的Jekyll front matter
 ---
 
-// 使用body类选择器，只针对非首页页面
-body:not(.layout--splash) {
-  font-size: 15px;  // 基础字体略小于首页
-  line-height: 1.65; // 增加行高，提升可读性
-  
-  // 标题层级调整
-  h1 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    line-height: 1.3;
-  }
-  
-  h2 {
-    font-size: 1.5rem;
-    margin-top: 2rem;
-    margin-bottom: 0.8rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border-color);
-  }
-  
-  h3 {
-    font-size: 1.3rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0.6rem;
-  }
-  
-  h4 {
-    font-size: 1.1rem;
-    font-weight: 600;
-  }
-  
-  // 正文段落
-  p {
-    margin-bottom: 1.2rem;
-    line-height: 1.65;
-  }
-  
-  // 列表项
-  li {
-    margin-bottom: 0.4rem;
-    line-height: 1.6;
-  }
-  
-  // 代码块
-  pre, code {
-    font-size: 0.9em;
-  }
-  
-  // 引用块
-  blockquote {
-    font-size: 1em;
-    line-height: 1.6;
-  }
-}
+/* 
+ * 刘钦杰个人网站 - 主题微调
+ * 仅修改字号和行高，保持其他所有样式不变
+ * 最小化侵入，完全兼容Minimal Mistakes主题
+ */
 
 // ============================================
-// 2. 针对"关于我"页面优化
+// 1. 无障碍访问优化（保持功能，隐藏视觉）
 // ============================================
-.page--about {
-  .page__content {
-    font-size: 15.5px;
-    
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-    }
-    
-    h2 {
-      margin-top: 2.5rem;
-      color: var(--primary-color);
-    }
-    
-    // 技能列表
-    ul {
-      line-height: 1.8;
-      li {
-        margin-bottom: 0.5rem;
-      }
-    }
-  }
-}
 
-// ============================================
-// 3. 针对项目页面优化
-// ============================================
-.page--portfolio {
-  .page__content {
-    font-size: 15px;
-    
-    h1 {
-      font-size: 1.9rem;
-      margin-bottom: 1.5rem;
-    }
-    
-    // 项目卡片内的文字
-    .feature__item {
-      .archive__item-title {
-        font-size: 1.25rem;
-      }
-      
-      .archive__item-excerpt {
-        font-size: 0.95rem;
-        line-height: 1.6;
-      }
-      
-      .btn {
-        font-size: 0.9rem;
-      }
-    }
-  }
-}
-
-// ============================================
-// 4. 针对博客归档页面优化
-// ============================================
-.layout--archive {
-  .archive {
-    font-size: 15px;
-    
-    .archive__subtitle {
-      font-size: 1.4rem;
-      color: var(--text-color-light);
-      margin-top: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    
-    .archive__item-title {
-      font-size: 1.2rem;
-      margin-bottom: 0.3rem;
-    }
-    
-    .archive__item-excerpt {
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-    
-    .archive__item-date {
-      font-size: 0.85rem;
-      color: #888;
-    }
-  }
-}
-
-// ============================================
-// 5. 针对单篇博客文章优化
-// ============================================
-.layout--single {
-  .page__content {
-    font-size: 15.5px;
-    line-height: 1.7;
-    
-    // 标题
-    h1 {
-      font-size: 1.9rem;
-      margin-bottom: 1rem;
-      line-height: 1.3;
-    }
-    
-    .page__meta {
-      font-size: 0.9rem;
-      color: #666;
-      margin-bottom: 2rem;
-    }
-    
-    // 正文优化
-    h2 {
-      margin-top: 2.2rem;
-      font-size: 1.5rem;
-      line-height: 1.4;
-    }
-    
-    h3 {
-      margin-top: 1.8rem;
-      font-size: 1.3rem;
-    }
-    
-    p {
-      margin-bottom: 1.3rem;
-      line-height: 1.7;
-    }
-    
-    // 列表
-    ul, ol {
-      margin-bottom: 1.5rem;
-      padding-left: 1.2em;
-      
-      li {
-        margin-bottom: 0.5rem;
-        line-height: 1.6;
-      }
-    }
-    
-    // 代码块
-    pre, code {
-      font-size: 0.92em;
-    }
-    
-    // 引用
-    blockquote {
-      font-size: 1.05em;
-      line-height: 1.6;
-      margin: 1.5rem 0;
-      padding: 0.8rem 1rem;
-      background-color: #f8f9fa;
-      border-left: 3px solid var(--primary-color);
-      
-      p {
-        margin-bottom: 0;
-      }
-    }
-    
-    // 图片说明
-    figcaption {
-      font-size: 0.9rem;
-      color: #666;
-      text-align: center;
-      margin-top: 0.5rem;
-    }
-    
-    // 表格
-    table {
-      font-size: 0.95em;
-      line-height: 1.5;
-    }
-  }
-}
-
-// ============================================
-// 6. 移动端优化
-// ============================================
-@media (max-width: 768px) {
-  // 非首页页面在移动端的字体调整
-  body:not(.layout--splash) {
-    font-size: 14.5px;
-    
-    h1 {
-      font-size: 1.6rem;
-    }
-    
-    h2 {
-      font-size: 1.3rem;
-    }
-    
-    h3 {
-      font-size: 1.15rem;
-    }
-    
-    .page__content {
-      font-size: 14.5px;
-    }
-  }
-  
-  // 保持首页在移动端的原有风格
-  .layout--splash {
-    .page__title {
-      font-size: 1.8rem;
-    }
-    
-    .page__excerpt {
-      font-size: 1rem;
-    }
-  }
-}
-
-// ============================================
-// 7. 无障碍访问修复（简洁版）
-// ============================================
+/* 
+ * 跳过链接：对键盘和屏幕阅读器保持可访问
+ * 视觉上隐藏，只在获得焦点时显示
+ */
 .skip-link {
   position: absolute !important;
   width: 1px !important;
@@ -289,23 +36,142 @@ body:not(.layout--splash) {
   clip: auto !important;
   top: 0.5rem !important;
   left: 0.5rem !important;
+  background: white;
+  border: 2px solid #2563eb;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #2563eb;
+  z-index: 10000;
 }
 
 // ============================================
-// 8. 通用工具类（可选）
+// 2. 非首页页面字体微调
 // ============================================
-.text-small {
-  font-size: 0.9em;
+
+/* 
+ * 保持首页的视觉冲击力（splash布局）
+ * 仅调整其他页面的字号和行高，提升可读性
+ * 不修改任何其他样式属性（边距、颜色、边框等）
+ */
+body:not(.layout--splash) {
+  /* 基础字体调整 */
+  font-size: 15px;
+  line-height: 1.65;
+  
+  /* 标题层级 */
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.3rem; }
+  h4 { font-size: 1.1rem; }
+  
+  /* 正文内容 */
+  p { line-height: 1.65; }
+  li { line-height: 1.65; }
+  
+  /* 代码和引用 */
+  code, pre { font-size: 0.92em; }
+  blockquote { font-size: 1em; line-height: 1.65; }
 }
 
-.text-large {
-  font-size: 1.1em;
+// ============================================
+// 3. 特定页面优化
+// ============================================
+
+/* "关于我"页面 */
+.page--about .page__content {
+  font-size: 15px;
+  
+  h1 { font-size: 1.9rem; }
+  h2 { font-size: 1.55rem; }
+  
+  ul, ol {
+    li { line-height: 1.7; }
+  }
 }
 
-.line-tight {
-  line-height: 1.4;
+/* 项目页面 */
+.page--portfolio .page__content {
+  font-size: 15px;
+  
+  h1 { font-size: 1.9rem; }
+  h2 { font-size: 1.55rem; }
+  
+  .feature__item {
+    .archive__item-title { font-size: 1.2rem; }
+    .archive__item-excerpt { 
+      font-size: 0.95rem; 
+      line-height: 1.6;
+    }
+  }
 }
 
-.line-loose {
-  line-height: 1.8;
+/* 博客归档页面 */
+.layout--archive .archive {
+  font-size: 15px;
+  
+  .archive__subtitle { font-size: 1.4rem; }
+  .archive__item-title { font-size: 1.2rem; }
+  .archive__item-excerpt { 
+    font-size: 0.95rem; 
+    line-height: 1.6;
+  }
+  .archive__item-date { font-size: 0.85rem; }
 }
+
+/* 单篇博客文章 */
+.layout--single .page__content {
+  font-size: 15px;
+  line-height: 1.7;
+  
+  h1 { font-size: 1.9rem; }
+  h2 { font-size: 1.55rem; }
+  h3 { font-size: 1.3rem; }
+  
+  p { line-height: 1.7; }
+  li { line-height: 1.7; }
+  
+  blockquote { 
+    font-size: 1.05em; 
+    line-height: 1.65;
+  }
+  
+  .page__meta { font-size: 0.9rem; }
+  figcaption { font-size: 0.9rem; }
+  code, pre { font-size: 0.92em; }
+}
+
+// ============================================
+// 4. 移动端适配
+// ============================================
+
+@media (max-width: 768px) {
+  /* 非首页页面的移动端字体优化 */
+  body:not(.layout--splash) {
+    font-size: 14.5px;
+    
+    h1 { font-size: 1.65rem; }
+    h2 { font-size: 1.35rem; }
+    h3 { font-size: 1.2rem; }
+    
+    .page__content {
+      font-size: 14.5px;
+    }
+  }
+  
+  /* 保持首页移动端原有风格 */
+  .layout--splash {
+    .page__title { font-size: 1.8rem; }
+    .page__excerpt { font-size: 1rem; }
+  }
+}
+
+// ============================================
+// 5. 工具类（完全可选）
+// ============================================
+
+/* 这些类可以在Markdown中手动使用 */
+.text-smaller { font-size: 0.9em; }
+.text-larger { font-size: 1.1em; }
+.line-tighter { line-height: 1.4; }
+.line-looser { line-height: 1.8; }
