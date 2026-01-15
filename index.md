@@ -2,6 +2,7 @@
 layout: splash
 title: "欢迎来到我的技术空间"
 excerpt: "化工专业学生 → 计算机科学探索者"
+classes: ["page--index"]  
 header:
   overlay_image: /assets/images/header-bg.jpg # 可选头部图片
   overlay_filter: 0.5
@@ -99,6 +100,7 @@ header:
     <a href="/about/" class="btn btn--warning">关于我</a>
   </p>
 </div>
+
 
 
 
