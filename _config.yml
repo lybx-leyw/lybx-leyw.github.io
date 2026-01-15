@@ -6,7 +6,7 @@ name: "刘钦杰"
 email: "3250101924@zju.edu.cn"
 description: >-
   浙江大学化工专业学生，正在转向计算机科学。这是我的技术博客和项目作品集。
-baseurl: "" # 对于用户名.github.io，这里留空
+baseurl: ""
 url: "https://lybx-leyw.github.io"
 repository: "lybx-leyw/lybx-leyw.github.io"
 github_username: lybx-leyw
@@ -16,34 +16,37 @@ markdown: kramdown
 highlighter: rouge
 lsi: false
 safe: true
+future: false  # 不发布未来日期的文章
 
 # 使用远程主题
 remote_theme: mmistakes/minimal-mistakes@4.27.3
 
-# 插件
+# 插件（GitHub Pages兼容）
 plugins:
-  - jekyll-include-cache
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-paginate
-
-# 分页设置
-paginate: 5
-paginate_path: /page:num/
+  - jekyll-include-cache  # 主题必需
+  - jekyll-feed           # RSS订阅
+  - jekyll-seo-tag        # SEO优化
+  - jekyll-sitemap        # 站点地图
 
 # 主题设置
-minimal_mistakes_skin: "air" # 皮肤：default, air, dark, mint 等
-search: true # 启用搜索
+minimal_mistakes_skin: "air"
+search: true
+search_full_content: false  # 只搜索标题和摘要，加快速度
+
+# 分页设置（如果博客文章多）
+paginate: 5
+paginate_path: /page:num/
 
 # 输出设置
 permalink: /:categories/:title/
 timezone: Asia/Shanghai
+encoding: UTF-8
 
 # 默认值
 defaults:
+  # 博客文章
   - scope:
-      path: ""
+      path: "_posts"
       type: "posts"
     values:
       layout: "single"
@@ -52,10 +55,11 @@ defaults:
       comments: false
       share: false
       related: false
-      toc: true  # 启用目录
+      toc: true
+  
+  # 独立页面（about.md, portfolio.md等）
   - scope:
       path: ""
-      type: "pages"
     values:
       layout: "single"
       author_profile: false
@@ -77,7 +81,7 @@ navigation:
 author:
   name: "刘钦杰"
   bio: "化工专业 → 计算机科学探索者"
-  avatar: "/assets/images/bio-photo.jpg" # 可选头像
+  # avatar: "/assets/images/bio-photo.jpg"  # 注释掉，因为没有这个文件
   location: "浙江大学"
   links:
     - label: "GitHub"
@@ -96,26 +100,49 @@ seo:
     - "https://github.com/lybx-leyw"
     - "https://lybx-leyw.github.io"
 
-# 社交分享（可选）
-share: false  # 可以设置为true启用
+# 社交分享（当前禁用）
+share: false
 
-# 评论系统（可选，如果你需要）
+# 评论系统（当前禁用）
 comments:
-  provider: false  # 可以设置为"disqus"、"giscus"等
+  provider: false
 
-# Google Analytics（可选）
+# 分析工具（当前禁用）
 analytics:
   provider: false
-  # google:
-  #   tracking_id: "UA-XXXXX-X"
 
-# 自定义集合（可选）
-# collections:
-#   portfolio:
-#     output: true
-#     permalink: /portfolio/:path/
+# 结构化数据
+structured_data: true
 
-# 排除文件
+# 社交媒体卡片
+twitter:
+  username: false
+  card: "summary_large_image"
+
+open_graph:
+  type: "website"
+  locale: "zh_CN"
+  site_name: "刘钦杰 | 技术探索者"
+  title: "刘钦杰 | 技术探索者"
+  description: "浙江大学化工专业学生，正在转向计算机科学"
+  image:
+    path: "/assets/images/header-bg.jpg"  # 保留，你有这个文件
+    height: 630
+    width: 1200
+
+# 语言和本地化
+locale: "zh-CN"
+lang: "zh-CN"
+date_format: "%Y年%m月%d日"
+
+# 搜索引擎规则
+robots:
+  rules:
+    - user-agent: "*"
+      allow: "/"
+  sitemap: "https://lybx-leyw.github.io/sitemap.xml"
+
+# 排除文件（不要构建的文件）
 exclude:
   - "Gemfile"
   - "Gemfile.lock"
@@ -128,35 +155,22 @@ exclude:
   - ".gitignore"
   - ".vscode"
   - "README.md"
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - ".sass-cache"
+  - ".jekyll-cache"
+  - ".jekyll-metadata"
+  - "Thumbs.db"
+  - ".DS_Store"
 
-# 包含文件
+# 包含文件（需要构建的特殊文件）
 include:
-  - "_pages"
-  - ".well-known"
+  - ".well-known"  # 用于SSL证书验证等
 
-# 语言设置
-locale: "zh-CN"
-lang: "zh-CN"
-
-# 日期格式
-date_format: "%Y年%m月%d日"
-
-# 数学公式支持（可选）
-# mathjax: true
-
-# 结构化数据（可选）
-structured_data: true
-
-# 其他元数据
-twitter:
-  username: false  # 你的Twitter用户名，如果有
-  card: "summary"
-
-open_graph:
-  type: "website"
-  locale: "zh_CN"
-  site_name: "刘钦杰 | 技术探索者"
-  image:
-    path: "/assets/images/header-bg.jpg"  # Open Graph图片，可选
-    height: 630
-    width: 1200
+# 自定义变量（可以在模板中使用）
+custom:
+  project_count: 3
+  blog_post_count: 1
+  university: "浙江大学"
+  major: "化学工程与工艺"
+  target_major: "计算机科学与技术"
