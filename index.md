@@ -12,7 +12,7 @@ header:
       url: "https://github.com/lybx-leyw"
 feature_row:
   - title: "大整数运算库"
-    excerpt: "C语言实现，包含NTT算法优化，性能提升120倍"
+    excerpt: "C语言实现，包含NTT算法优化，性能提升198.57倍"
     url: "https://github.com/lybx-leyw/Big-integer-arithmetic"
     btn_class: "btn--primary"
     btn_label: "查看源码"
