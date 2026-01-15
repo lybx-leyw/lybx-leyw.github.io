@@ -1,0 +1,47 @@
+# _config.yml
+
+title: "刘钦杰 | 技术探索者"
+email: "3250101924@zju.edu.cn"
+description: >- 
+  浙江大学化工专业学生，正在转向计算机科学。这是我的技术博客和项目作品集。
+baseurl: ""
+url: "https://lybx-leyw.github.io"
+repository: "lybx-leyw/lybx-leyw.github.io"
+
+# 使用远程主题
+remote_theme: mmistakes/minimal-mistakes@4.27.3
+
+# 插件
+plugins:
+  - jekyll-include-cache
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# 主题设置
+minimal_mistakes_skin: "default" # 皮肤：default, air, dark, mint 等
+search: true # 启用搜索
+
+# 导航菜单
+navigation:
+  - title: "关于我"
+    url: /about/
+  - title: "项目"
+    url: /portfolio/
+  - title: "博客"
+    url: /year-archive/
+  - title: "GitHub"
+    url: https://github.com/lybx-leyw
+
+# 作者信息
+author:
+  name: "刘钦杰"
+  bio: "化工专业 → 计算机科学探索者"
+  avatar: "/assets/images/bio-photo.jpg" # 可选头像
+  links:
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/lybx-leyw"
+    - label: "Email"
+      icon: "fas fa-envelope"
+      url: "mailto:3250101924@zju.edu.cn"
