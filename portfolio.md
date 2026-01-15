@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "项目展示"
+classes: ["page--portfolio"]
 permalink: /portfolio/
 ---
 
@@ -41,3 +42,4 @@ permalink: /portfolio/
 - 完整游戏功能：计分、等级、特殊功能
 
 **GitHub**：https://github.com/lybx-leyw/Tetris
+
