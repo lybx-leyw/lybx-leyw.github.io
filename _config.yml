@@ -73,15 +73,6 @@ navigation:
   - title: "GitHub"
     url: https://github.com/lybx-leyw
 
-# 页脚导航
-footer_links:
-  - title: "GitHub"
-    url: https://github.com/lybx-leyw
-  - title: "Email"
-    url: "mailto:3250101924@zju.edu.cn"
-  - title: "RSS订阅"
-    url: /feed.xml
-
 # 作者信息
 author:
   name: "刘钦杰"
@@ -150,9 +141,6 @@ lang: "zh-CN"
 # 日期格式
 date_format: "%Y年%m月%d日"
 
-# 网站图标
-favicon: "/assets/images/favicon.ico"  # 可选，如果你有favicon
-
 # 数学公式支持（可选）
 # mathjax: true
 
@@ -169,7 +157,7 @@ open_graph:
   locale: "zh_CN"
   site_name: "刘钦杰 | 技术探索者"
   image:
-    path: "/assets/images/og-image.jpg"  # Open Graph图片，可选
+    path: "/assets/images/header-bg.jpg"  # Open Graph图片，可选
     height: 630
     width: 1200
 
