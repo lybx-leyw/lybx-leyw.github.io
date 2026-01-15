@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "关于我"
+classes: ["page--about"] 
 permalink: /about/
 ---
 
@@ -31,3 +32,4 @@ permalink: /about/
 - 📧 邮箱：3250101924@zju.edu.cn
 - 🔗 GitHub：https://github.com/lybx-leyw
 - 📖 技术博客：就在这个网站！
+
