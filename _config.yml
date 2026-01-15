@@ -1,12 +1,21 @@
 # _config.yml
 
+# 网站基本信息
 title: "刘钦杰 | 技术探索者"
+name: "刘钦杰"
 email: "3250101924@zju.edu.cn"
-description: >- 
+description: >-
   浙江大学化工专业学生，正在转向计算机科学。这是我的技术博客和项目作品集。
-baseurl: ""
+baseurl: "" # 对于用户名.github.io，这里留空
 url: "https://lybx-leyw.github.io"
 repository: "lybx-leyw/lybx-leyw.github.io"
+github_username: lybx-leyw
+
+# 构建设置
+markdown: kramdown
+highlighter: rouge
+lsi: false
+safe: true
 
 # 使用远程主题
 remote_theme: mmistakes/minimal-mistakes@4.27.3
@@ -17,13 +26,44 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-paginate
+
+# 分页设置
+paginate: 5
+paginate_path: /page:num/
 
 # 主题设置
 minimal_mistakes_skin: "air" # 皮肤：default, air, dark, mint 等
 search: true # 启用搜索
 
+# 输出设置
+permalink: /:categories/:title/
+timezone: Asia/Shanghai
+
+# 默认值
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "single"
+      author_profile: true
+      read_time: true
+      comments: false
+      share: false
+      related: false
+      toc: true  # 启用目录
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "single"
+      author_profile: false
+
 # 导航菜单
 navigation:
+  - title: "首页"
+    url: /
   - title: "关于我"
     url: /about/
   - title: "项目"
@@ -33,15 +73,108 @@ navigation:
   - title: "GitHub"
     url: https://github.com/lybx-leyw
 
+# 页脚导航
+footer_links:
+  - title: "GitHub"
+    url: https://github.com/lybx-leyw
+  - title: "Email"
+    url: "mailto:3250101924@zju.edu.cn"
+  - title: "RSS订阅"
+    url: /feed.xml
+
 # 作者信息
 author:
   name: "刘钦杰"
   bio: "化工专业 → 计算机科学探索者"
   avatar: "/assets/images/bio-photo.jpg" # 可选头像
+  location: "浙江大学"
   links:
     - label: "GitHub"
-      icon: "fab fa-github"
+      icon: "fab fa-fw fa-github"
       url: "https://github.com/lybx-leyw"
     - label: "Email"
-      icon: "fas fa-envelope"
+      icon: "fas fa-fw fa-envelope"
       url: "mailto:3250101924@zju.edu.cn"
+
+# SEO优化
+seo:
+  type: "Person"
+  name: "刘钦杰"
+  description: "浙江大学化工专业学生，正在转向计算机科学。分享技术学习历程和项目经验。"
+  links:
+    - "https://github.com/lybx-leyw"
+    - "https://lybx-leyw.github.io"
+
+# 社交分享（可选）
+share: false  # 可以设置为true启用
+
+# 评论系统（可选，如果你需要）
+comments:
+  provider: false  # 可以设置为"disqus"、"giscus"等
+
+# Google Analytics（可选）
+analytics:
+  provider: false
+  # google:
+  #   tracking_id: "UA-XXXXX-X"
+
+# 自定义集合（可选）
+# collections:
+#   portfolio:
+#     output: true
+#     permalink: /portfolio/:path/
+
+# 排除文件
+exclude:
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "node_modules"
+  - "vendor/bundle/"
+  - "vendor/cache/"
+  - "vendor/gems/"
+  - "vendor/ruby/"
+  - ".git"
+  - ".gitignore"
+  - ".vscode"
+  - "README.md"
+
+# 包含文件
+include:
+  - "_pages"
+  - ".well-known"
+
+# 语言设置
+locale: "zh-CN"
+lang: "zh-CN"
+
+# 日期格式
+date_format: "%Y年%m月%d日"
+
+# 网站图标
+favicon: "/assets/images/favicon.ico"  # 可选，如果你有favicon
+
+# 数学公式支持（可选）
+# mathjax: true
+
+# 结构化数据（可选）
+structured_data: true
+
+# 其他元数据
+twitter:
+  username: false  # 你的Twitter用户名，如果有
+  card: "summary"
+
+open_graph:
+  type: "website"
+  locale: "zh_CN"
+  site_name: "刘钦杰 | 技术探索者"
+  image:
+    path: "/assets/images/og-image.jpg"  # Open Graph图片，可选
+    height: 630
+    width: 1200
+
+# 自定义字段（可以根据需要添加）
+custom:
+  project_count: 3
+  blog_post_count: 1
+  github_stars: 1  # 你的GitHub stars数，可以更新
