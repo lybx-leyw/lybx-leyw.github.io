@@ -1,6 +1,7 @@
 ---
 title: "博客归档"
 layout: archive
+classes: ["page--archive"]
 permalink: /year-archive/
 ---
 
